@@ -1,0 +1,9 @@
+{
+    "//": "Set seed value",
+    "random_seed" : 42,
+
+    "//": "Model folder",
+    "model_path" : "../models/",
+    "data_dir" : "../data/"
+    
+}
