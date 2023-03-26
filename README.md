@@ -15,16 +15,20 @@
   
 
 ## Project description
+High competition in the fintech industry pushes companies to innovate. The *LendingClub* company is the first firm in the US providing peer-to-peer loans between private customers. In addition, the company trades loans on a secondary market. A combination of practical and attractive website, and low interest rates assured fast growth of the client base. This, however, resulted in increase of defaults on the loan repayments rate since current algorythm of the default probability calculation has to be constantly tuned. 
 
+The business objective of the assignment is to identify factors, increasing credit loss of the company such as:
+* defaults on the loan repayment
+* late installment payments which are subdivided as follows:
+    * short overdue (between 16 and 30 days)
+    * long overdue (between 31 and 120 days)
 
+An significance estimation of these factors will gradually improves the company profit and provides clients with justified interest rates related to their default risk. 
 
 ## Data and methods
 
-The dataset contains information about successful loan applicants which means the loan was approved by the bank. The goal is to identify tendencies leading to:
-* default on the loan repayment
-* late installment which is subdivided as follows:
-    * short overdue (between 16 and 30 days)
-    * long overdue (between 31 and 120 days)
+The dataset contains information about successful loan applicants that means the loan was approved by the bank. 
+
 
 
 <details>
@@ -34,7 +38,7 @@ text
 </details>
 
 <div align="center"> 
-<img src="./figures/fig.png" width="400">  </div>
+<img src="./figures/fig_1.png" width="400">  </div>
 
 <div align="center">  Fig.2   </div>
 
