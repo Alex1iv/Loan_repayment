@@ -164,3 +164,27 @@ def get_professions(arg:str)->str:
    
     else:
         return 'other' #arg
+    
+    
+def get_sigma_limits(data: pd.DataFrame, features:list, sigma_factor=3):
+    """Returns upper limit 
+
+    Args:
+        feature (pd.DataFrame): Feature to process
+        limit
+    """    
+    for i, name in enumerate(features):
+        mean = data[name].mean()
+        std = data[name].std() 
+        upper_limit = round(mean + sigma_factor* std)
+        lower_limit = round(mean - sigma_factor* std)
+        #print(f'Upper limit for {name} is: ', upper_limit)
+        
+        n_outliers = len(data[(data['annual_inc_log'] < lower_limit) | (data['annual_inc_log'] > upper_limit)].index)
+        print('number of outliers: ', n_outliers)
+        
+        limits = {'upper_limit':upper_limit,
+                  'lower_limit':lower_limit,
+                  'n_outliers': n_outliers}
+        
+    return limits
