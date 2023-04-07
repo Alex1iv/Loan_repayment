@@ -3,7 +3,7 @@
     "random_seed" : 42,
 
     "//": "Model folder",
-    "model_path" : "../models/",
+    "path_models" : "../models/",
     "data_dir" : "../data/",
     "path_figures": "../figures",
 
