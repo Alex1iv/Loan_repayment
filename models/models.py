@@ -21,13 +21,14 @@ class ModelSequential(Model):
 
         super().__init__()
         # ------- параметры ------------
-        self.n_timesteps = None
+        self.features = None
         #self.n_channels = X_train.shape[2]
-        self.output_units = y_train.shape[-1]
+        self.output_units = 1 #y_train.shape[1] #y_train.shape[-1]
         #self.units = units
                 
         # -------- слои модели ----------------
-        self.input_layer = x = tf.keras.layers.Input(shape=(self.n_timesteps, X_train.shape[1]))
+        self.input_layer = x = tf.keras.layers.Input(shape=(self.features, X_train.shape[1])) #
+        x = tf.keras.Sequential()(x)
         x = tf.keras.layers.Dropout(0.4)(x)
         
         x = tf.keras.layers.Dense(64, activation='relu')(x)
