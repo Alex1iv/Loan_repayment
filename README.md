@@ -40,7 +40,7 @@ text
 <div align="center"> 
 <img src="./figures/fig_1.png" width="400">  </div>
 
-<div align="center">  Fig.2   </div>
+<div align="center"><img src="./figures/fig_2.png" width="400">  </div>
 
 
 ## Project structure
