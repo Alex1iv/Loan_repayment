@@ -5,7 +5,7 @@
     "//": "Model folder",
     "path_models" : "../models/",
     "data_dir" : "../data/",
-    "path_figures": "../figures",
+    "path_figures": "../figures/",
 
     "//": "Функция Callbacks",
     "reduce_patience": 15,
