@@ -79,7 +79,7 @@ def get_ROC_plot(model,  X_test, y_test, title:str,  plot_counter:int=None):
     else:
         #plot_counter=1
         plt.tight_layout()
-        ax.set_title(f'ROC curve for {title}', y=-0.25)- 
+        ax.set_title(f'ROC curve for {title}', y=-0.25)
         
         
 def get_comparison(models:dict, X_test, y_test, path_figures=config.path_figures, fig_id:int=None): #title:str, 
@@ -195,3 +195,51 @@ def get_sigma_limits(data: pd.DataFrame, features:list, sigma_factor=3):
                   'n_outliers': n_outliers}
         
     return limits
+
+def get_purpose(arg:str)->str:
+    """Categorization of loan needs
+
+    Args:
+        arg (str): need description
+
+    Returns:
+        _type_: categorized need
+    """    
+    
+    arg = arg.lower().replace('/',' ')
+    
+    debt_consolidation = ['debt_consolidation']
+    cred_card = ['credit_card']
+    house = ['home_improvement', 'house','moving','renewable_energy']
+    purchases = ['car', 'major_purchase']
+    education = ['educational']
+    business = ['small_business','business']
+    health = ['medical']
+    leasure = ['vacation']
+    
+    if arg in debt_consolidation or ('debt' in arg  and 'consolidation' in arg): 
+        return 'debt_consolidation' 
+    
+    elif arg in cred_card:
+        return 'cred_card'
+
+    elif arg in house:
+        return 'house'    
+
+    elif arg in purchases:
+        return 'purchases' 
+    
+    elif arg in education:
+        return 'education' 
+    
+    elif arg in business:
+        return 'business' 
+    
+    elif arg in health:
+        return 'health'     
+        
+    elif arg in leasure:
+        return 'leasure'  
+    
+    else:
+        return arg
