@@ -35,27 +35,44 @@ Out of a large loan applicantions dataset of 1.6 Gb was taken a sample of some 1
 <div align="center"> 
 <img src="./figures/fig_1.png" width="500">  </div>
 
-The platform categorizes loans by credit risk as shown on the fig.2. Letters from A to G represents the risk category from the lowest to highest level respectively. Analyzing the chart it can be inferred that the risk categorization smoothly increases by reducing the number of applications. One of risk factors is the loan amount as shown on the fig.3.
+### Current credit risk policy
 
-<div align="center"><img src="./figures/fig_2.png" width="800">  </div>
-<div align="center"> <img src="./figures/fig_3_1.png" width="1100"></div>
+There is no information provided about whether the credit risk assessment policy of the company was changed over time. Analyzing growing default rates and overdue rates over time shown on the fig.2, however, it can be stated that the company had beed issuing more and more risky loans until 2015. Even though the annual default rate has substantially droped form 31% to 18% since 2016, the overdue rate has soared from 2 to 20%. A perilous credit policy resulted in a substantial financial loss.
+
+<div align="center"> 
+<img src="./figures/fig_2.png" width="450"> </div>
+
+### Features analysis
+<details>
+  <summary>Features analysis </summary>
+The platform categorizes loans by credit risk as shown on the fig.3. Letters from A to G represents the risk category from the lowest to highest level respectively. Analyzing the graph it can be inferred that default rate  smoothly increases by category. Surprisingly, default rate in the group 'G' exceeds Categories B and C contains the majority of all applications (slightly more 30% each).
+
+<div align="center"><img src="./figures/fig_3.png" width="500">  </div>
 
 Customers with lower loan grades repay their loans more often in contrast to those with higher loan grades. It implies that the lower the loan ammount the higher probablility of repayment without delay. Taking into account the loans terms distribution shown on the fig.4, it can be added that short-term loans have lower probability of default or overdue. 
 
 <div align="center"> 
 <img src="./figures/fig_4.png" width="500">  </div>
 
-The default rate slightly decreases from 26% to 22% when applicant's employment duration reaches 5 years, but within the next 2 years it reaches 25% and remains stable afterwards as shown on the fig.5
+The default rate slightly decreases from 26% to 22% when applicant's employment duration reaches 5 years, but within the next 2 years it reaches 25% and afterwards remains stable as shown on the fig.5. Taking into account loan applicants job titles shown on the fig.5 it can be said, that skilled laborers have lower default probability in contrast to that of other job titles. Notably that overdue rate is equal to 3 % for every job title.  
 
 <div align="center"> 
-<img src="./figures/fig_5.png" width="450">  </div>
+<img src="./figures/fig_5.png" width="450"><img src="./figures/fig_6.png" width="450">  </div>
 
-<details>
-    <summary>Features description</summary>
+Applicants with lower annual incomes are more prone to defaul unlike those with larger annual incomes as shown on the fig.6. Probably financial difficulties affect applicats' ability to repay their loans. The feature yet contains multiple outliers exceeding the range of $mean \pm 3 * st.diviation$.
 
-text
+<div align="center"> 
+<img src="./figures/fig_7.png" width="450"> </div>
+
 </details>
 
+## ML model
+The gradien boosting model was applied to identify hidden interrelationship between features. The model classifies default accounts from fully paid ones with high precision as showh on the fig.8.
+
+<div align="center"> 
+<img src="./figures/fig_8.png" width="450"> <img src="./figures/fig_9.png" width="450"></div>
+
+It is essential that the interest rate is the most significant factor of the default. The rate is calculated using the annual income, the loan amount.
 
 ## Project structure
 
