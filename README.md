@@ -57,12 +57,12 @@ Customers with lower loan grades repay their loans more often in contrast to tho
 The default rate slightly decreases from 26% to 22% when applicant's employment duration reaches 5 years, but within the next 2 years it reaches 25% and afterwards remains stable as shown on the fig.5. Taking into account loan applicants job titles shown on the fig.5 it can be said, that skilled laborers have lower default probability in contrast to that of other job titles. Notably that overdue rate is equal to 3 % for every job title.  
 
 <div align="center"> 
-<img src="./figures/fig_5.png" width="450"><img src="./figures/fig_6.png" width="450">  </div>
+<img src="./figures/fig_5.png" width="440"><img src="./figures/fig_6.png" width="440">  </div>
 
 Applicants with lower annual incomes are more prone to defaul unlike those with larger annual incomes as shown on the fig.6. Probably financial difficulties affect applicats' ability to repay their loans. The feature yet contains multiple outliers exceeding the range of $mean \pm 3 * st.diviation$.
 
 <div align="center"> 
-<img src="./figures/fig_7.png" width="450"> </div>
+<img src="./figures/fig_7.png" width="440"> </div>
 
 </details>
 
@@ -70,7 +70,7 @@ Applicants with lower annual incomes are more prone to defaul unlike those with 
 The gradien boosting model was applied to identify hidden interrelationship between features. The model classifies default accounts from fully paid ones with high precision as showh on the fig.8.
 
 <div align="center"> 
-<img src="./figures/fig_8.png" width="450"> <img src="./figures/fig_9.png" width="450"></div>
+<img src="./figures/fig_8.png" width="440"> <img src="./figures/fig_9.png" width="440"></div>
 
 It is essential that the interest rate is the most significant factor of the default. The rate is calculated using the annual income, the loan amount.
 
