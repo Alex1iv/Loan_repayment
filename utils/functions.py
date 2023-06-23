@@ -69,15 +69,17 @@ def get_ROC_plot(model,  X_test, y_test, title:str,  plot_counter:int=None):
     );
     
     ax.legend()
-    plt.tight_layout();
+    
     
     if plot_counter is not None:
-        ax.set_title(f'Fig.{plot_counter} - ROC curve for {title}', y=-0.2)
+        ax.set_title(f'Fig.{plot_counter} - ROC curve for {title}', y=-0.25,fontsize=13, loc='center')
+        plt.tight_layout()
         plt.savefig(path_figures + f'fig_{plot_counter}.png')
         
     else:
         #plot_counter=1
-        ax.set_title(f'ROC curve for {title}', y=-0.2) #Fig.{plot_counter} - 
+        plt.tight_layout()
+        ax.set_title(f'ROC curve for {title}', y=-0.25)- 
         
         
 def get_comparison(models:dict, X_test, y_test, path_figures=config.path_figures, fig_id:int=None): #title:str, 
