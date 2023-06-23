@@ -10,8 +10,9 @@ from sklearn.metrics import roc_curve, roc_auc_score
 
 # Импортируем константы из файла config
 config = config_reader('../config/config.json')
+path_figures = config.path_figures
 
-features_dscr = pd.read_excel('../data/Features.xlsx', 'LoanStats')
+features_dscr = pd.read_excel('../data/Features.xlsx') #, sheetname='LoanStats'
 
 def get_descr(feature:str, feature_names:pd.DataFrame=features_dscr)->str:
     """Get feature description easily
@@ -25,7 +26,7 @@ def get_descr(feature:str, feature_names:pd.DataFrame=features_dscr)->str:
     print(feature_names[feature_names['LoanStatNew']==feature]['Description'].item())
 
 
-def get_ROC_plot(model,  X_test, y_test, title:str, fig_id:int=None, path_figures=config.path_figures):
+def get_ROC_plot(model,  X_test, y_test, title:str,  plot_counter:int=None):
     """
     Create the roc curve plot
     Args:
@@ -53,7 +54,6 @@ def get_ROC_plot(model,  X_test, y_test, title:str, fig_id:int=None, path_figure
     ax.plot([0, 1], [0, 1], color='k', lw=2, linestyle=':', 
             label='Model predicting random')
 
-    ax.set_title(f'Fig.{fig_id} - ROC curve for {title}', y=-0.2)
     ax.set_xlabel('False Positive Rate')
     ax.set_ylabel('True Positive Rate')
 
@@ -71,8 +71,13 @@ def get_ROC_plot(model,  X_test, y_test, title:str, fig_id:int=None, path_figure
     ax.legend()
     plt.tight_layout();
     
-    if fig_id:
-        plt.savefig(os.path.join(path_figures + f'fig_{fig_id}.png'))
+    if plot_counter is not None:
+        ax.set_title(f'Fig.{plot_counter} - ROC curve for {title}', y=-0.2)
+        plt.savefig(path_figures + f'fig_{plot_counter}.png')
+        
+    else:
+        #plot_counter=1
+        ax.set_title(f'ROC curve for {title}', y=-0.2) #Fig.{plot_counter} - 
         
         
 def get_comparison(models:dict, X_test, y_test, path_figures=config.path_figures, fig_id:int=None): #title:str, 
