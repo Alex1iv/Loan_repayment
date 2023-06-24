@@ -44,7 +44,7 @@ There is no information provided about whether the credit risk assessment policy
 
 ### Features analysis
 <details>
-  <summary>Features analysis </summary></details>
+  <summary>Features analysis </summary>
 The platform categorizes loans by credit risk as shown on the fig.3. Letters from A to G represents the risk category from the lowest to highest level respectively. Analyzing the graph it can be inferred that default rate  smoothly increases by category. Surprisingly, default rate in the group 'G' exceeds Categories B and C contains the majority of all applications (slightly more 30% each).
 
 <div align="center"><img src="./figures/fig_3.png" width="500">  </div>
@@ -64,18 +64,26 @@ Applicants with lower annual incomes are more prone to defaul unlike those with 
 <div align="center"> 
 <img src="./figures/fig_7.png" width="440"> </div>
 
+Analyzing the number of years since the first recorded credit up to the moment when the loan was request from the company shown on the fig.8 it can be inferred:
+* the borrower's default rate substantially dropps from 40% to 30% after 3 years since the first credit and then gradually downwards to 18% unil the credit history span reaches 35 years. Then it starts to grow and fluctuating significantly.
+* similarly to the default rate, overdue rate reamins stable at 2% until the credit history span reaches 35 years, and then constanly increases by 1% annualy.
 
+<div align="center"> <img src="./figures/fig_8.png" width="500"> </div>
+
+</details>
 
 ## ML model
-The gradien boosting model was applied to identify hidden interrelationship between features. The model classifies default accounts from fully paid ones with high precision as showh on the fig.8.
+The gradien boosting model was applied to identify hidden interrelationship between features. The model classifies default accounts from fully paid ones with high precision as showh on the fig.9.
 
 <div align="center"> 
-<img src="./figures/fig_8.png" width="350"> <img src="./figures/fig_9.png" width="450"></div>
+<img src="./figures/fig_9.png" width="350"> <img src="./figures/fig_10.png" width="450"></div>
 
-It is essential that the interest rate is the most significant factor of the default. The rate is calculated using the annual income, the loan amount that is why these features appear on the chart.
+It is essential that the interest rate is the most significant factor of the default as shown on the fig.10. In case the employment duration is fewer than 10 years, the probability of default is higher. The longer the credit history span, the lower the default rate. It is fair until the span reaches 35 years. Lower loan is far easier to repay as usual.
 
-<div align="center"> 
-<img src="./figures/fig_10.png" width="600"> </div>
+The rate, however, is calculated using multiple multiples. Two major factors, which positively correlates with the rate are employment duration and the loan amount. 
+Obviously the company  consider applicants' as reliable in case their credit history is long. The default rate, however, would be lower in case the credit history span will be within the range of 3 and 35 years.
+
+<div align="center"> <img src="./figures/fig_11.png" width="600"> </div>
 
 ## Project structure
 
