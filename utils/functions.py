@@ -243,3 +243,19 @@ def get_purpose(arg:str)->str:
     
     else:
         return arg
+    
+def annotate_scatterplot(fig)->dict:
+    """display r2 and fit equation  at the scatterplot
+
+    Args:
+        fig (_type_): figure instance
+
+    Returns:
+        _dict_: slope, intercept and rvalue for every line
+    """    
+    args = dict()
+    
+    for i in range(len(fig.get_lines())):
+        args[i] = list(scipy.stats.linregress(x=fig.get_lines()[i].get_xdata(),y=fig.get_lines()[i].get_ydata()))[:3]
+    
+    return args
