@@ -4,7 +4,11 @@
 
 * [Summary](README.md#Summary)  
 * [Project description](README.md#Project-description)  
-* [Data and methods](README.md#Data-and-methods)                                
+* [Data and methods](README.md#Data-and-methods)
+  * [Current credit risk policy](README.md#Current-credit-risk-policy)   
+  * [Features analysis](README.md#Features-analysis)
+* [ML model](README.md#ML-model)
+* [Proposed credit risk policy](README.md#Proposed-credit-risk-policy)      
 * [Project structure](README.md#Project-structure)                   
 
 
@@ -12,9 +16,11 @@
 
 ## Summary
 
+It was proposed an algorythm, improving the loan portfolio' rate of return using machine learning. If applied, the alrorithm is expected to reduce the number of applications by 37% and increase the rate of return by 58%. It was reestimated applicant's features leading to default. It was also identified factors of the interest rate.
   
 
 ## Project description
+
 High competition in the fintech industry pushes companies to innovate. The *LendingClub* company (platform) is the first firm in the US providing peer-to-peer loans between private customers. In addition, the company trades loans on a secondary market. A combination of practical and attractive website, and low interest rates assured fast growth of the client base. This, however, resulted in increase of defaults on the loan repayments rate since current algorythm of the default probability calculation has to be constantly tuned. 
 
 The business objective of the assignment is to identify factors, increasing credit loss of the company such as:
@@ -43,8 +49,7 @@ There is no information provided about whether the credit risk assessment policy
 <img src="./figures/fig_2.png" width="450"> </div>
 
 ### Features analysis
-<details>
-  <summary>Features analysis </summary>
+
 The platform categorizes loans by credit risk as shown on the fig.3. Letters from A to G represents the risk category from the lowest to highest level respectively. Analyzing the graph it can be inferred that default rate  smoothly increases by category. Surprisingly, default rate in the group 'G' exceeds Categories B and C contains the majority of all applications (slightly more 30% each).
 
 <div align="center"><img src="./figures/fig_3.png" width="500">  </div>
@@ -64,26 +69,38 @@ Applicants with lower annual incomes are more prone to defaul unlike those with 
 <div align="center"> 
 <img src="./figures/fig_7.png" width="440"> </div>
 
-Analyzing the number of years since the first recorded credit up to the moment when the loan was request from the company shown on the fig.8 it can be inferred:
+In case the number of bankruptcies and/or derogatory records exceeds 1, it severely increases the probability of default as it was shown on the fig.8.  
+
+<div align="center"> 
+<img src="./figures/fig_8.png" width="440"> </div>
+
+
+Analyzing the number of years since the first recorded credit up to the moment when the loan was request from the company shown on the fig.9 it can be inferred:
 * the borrower's default rate substantially dropps from 40% to 30% after 3 years since the first credit and then gradually downwards to 18% unil the credit history span reaches 35 years. Then it starts to grow and fluctuating significantly.
 * similarly to the default rate, overdue rate reamins stable at 2% until the credit history span reaches 35 years, and then constanly increases by 1% annualy.
 
-<div align="center"> <img src="./figures/fig_8.png" width="500"> </div>
+<div align="center"> <img src="./figures/fig_9.png" width="500"> </div>
 
-</details>
+
 
 ## ML model
-The gradien boosting model was applied to identify hidden interrelationship between features. The model classifies default accounts from fully paid ones with high precision as showh on the fig.9.
+The gradien boosting model was applied to identify hidden interrelationship between features. The model classifies default accounts from fully paid ones with high precision as showh on the fig.10.
 
 <div align="center"> 
-<img src="./figures/fig_9.png" width="350"> <img src="./figures/fig_10.png" width="450"></div>
+<img src="./figures/fig_10.png" width="350"> <img src="./figures/fig_11.png" width="450"></div>
 
 It is essential that the interest rate is the most significant factor of the default as shown on the fig.10. In case the employment duration is fewer than 10 years, the probability of default is higher. The longer the credit history span, the lower the default rate. It is fair until the span reaches 35 years. Lower loan is far easier to repay as usual.
 
 The rate, however, is calculated using multiple multiples. Two major factors, which positively correlates with the rate are employment duration and the loan amount. 
 Obviously the company  consider applicants' as reliable in case their credit history is long. The default rate, however, would be lower in case the credit history span will be within the range of 3 and 35 years.
 
-<div align="center"> <img src="./figures/fig_11.png" width="600"> </div>
+<div align="center"> <img src="./figures/fig_12.png" width="600"> </div>
+
+## Proposed credit risk policy
+
+To improve the rate of return it can be suggested to improve risk policy using machine learning which may help to eliminate risky loan applications. The approach can be demonstrated on the sample form the current loan portfolio. It contains 38550 applications from which the company is expected to earn $902 \pm 1096$ usd. The portfolio default rate, however, is expected to be 37%. In case we eliminate 37% of applications whose default probabilities exceed 50 %, we will increase the rate of return by 58% to $1433 \pm 1071$ usd.
+
+<div align="center"> <img src="./figures/fig_13.png" width="500"> </div>
 
 ## Project structure
 
