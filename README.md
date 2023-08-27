@@ -64,7 +64,7 @@ The default rate slightly decreases from 30% to 25% when applicant's employment 
 <div align="center"> 
 <img src="./figures/fig_5.png" width="440"><img src="./figures/fig_6.png" width="440">  </div>
 
-Applicants with lower annual incomes are more prone to defaul unlike those with larger annual incomes as shown on the fig.7. Probably financial difficulties affect borrowers' ability to repay their loans. The feature yet contains multiple outliers exceeding the range of $mean \pm 3 * st.diviation$.
+Applicants with lower annual incomes are more prone to defaul unlike those with larger annual incomes as shown on the fig.7. Probably financial difficulties affect borrowers' ability to repay their loans. The feature yet contains multiple outliers exceeding the range of $mean \pm 3 \times st.deviation$.
 
 <div align="center"> 
 <img src="./figures/fig_7.png" width="440"> </div>
