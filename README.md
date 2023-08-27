@@ -16,7 +16,7 @@
 
 ## Summary
 
-It was proposed an algorythm, improving the loan portfolio' rate of return using machine learning. If applied, the alrorithm is expected to reduce the number of applications by 37% and increase the rate of return by 58%. It was reestimated applicant's features leading to default. It was also identified factors of the interest rate.
+It was proposed a machine learning algorythm, improving the rate of return from consumer loan portfolio. If applied, the alrorithm is expected to reduce the number of applications by 37% and increase the rate of return by 58%. It was reestimated applicant's features, leading to default on loan repayment. It was also identified factors of the interest rate.
   
 
 ## Project description
@@ -98,7 +98,7 @@ Obviously the company  consider applicants' as reliable in case their credit his
 
 ## Proposed credit risk policy
 
-To improve the rate of return it can be suggested to improve risk policy using machine learning which may help to eliminate risky loan applications. The approach can be demonstrated on the sample form the current loan portfolio. It contains 38550 applications from which the company is expected to earn $902 \pm 1096$ usd. The portfolio default rate, however, is expected to be 37%. In case we eliminate 37% of applications whose default probabilities exceed 50 %, we will increase the rate of return by 58% to $1433 \pm 1071$ usd.
+To increase the rate of return from consumer loans, the bank might eliminate risky loan applications. Author proposes the machine learning algorithm, forecasting defaults on loans repayment. The outcome could be demonstrated on the sample form the current loan portfolio. It contains 38550 applications from which the company is expected to earn in average $902 \pm 1096$ usd. The portfolio default rate, however, is expected to be 37%. In case we eliminate 37% of applications whose default probabilities exceed 50 %, we will increase the rate of return by 58% so the average revenue will be $1433 \pm 1071$ usd.
 
 <div align="center"> <img src="./figures/fig_13.png" width="500"> </div>
 
